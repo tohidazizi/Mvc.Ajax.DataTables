@@ -1,0 +1,25 @@
+﻿@using Mvc.Ajax.DataTables
+@{
+    ViewBag.Title = "Simple DataTable by Defining ColumnDefs";
+}
+<h2>
+    Simple DataTable by Defining ColumnDefs</h2>
+<div class="ui-widget">
+    <table id="my-table" class="display">
+    </table>
+</div>
+@Ajax.DataTable(
+    "my-table",
+    new AjaxOptions { Url = Url.Action("GetArrayData"), HttpMethod = "GET" },
+    new DataTableAttributes
+    {
+        ColumnDefs = new List<ColumnDef>()
+        {
+            new ColumnDef(){ DataProp= "Id", Name="Id", Title="ID", Visible=true }, 
+            new ColumnDef(){ DataProp= "Engine", Name="Engine", Title="Engine", Visible=true },
+            new ColumnDef(){ DataProp= "Browser", Name="Browser", Title="Browser"},
+            new ColumnDef(){ DataProp= "Platform", Name="Platform", Title="Platform"},
+            new ColumnDef(){ DataProp= "Version", Name="Version", Title="Version"},
+            new ColumnDef(){ DataProp= "Grade", Name="Grade", Title="Grade"}
+        }
+    })

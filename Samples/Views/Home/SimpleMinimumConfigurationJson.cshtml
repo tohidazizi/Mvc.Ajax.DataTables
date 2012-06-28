@@ -1,0 +1,25 @@
+﻿@using IntrinsiQ.Web.MVC.Ajax.DataTables
+@{
+    ViewBag.Title = "Simple DataTable by Defining ColumnDefs";
+}
+<h2>
+    Simple DataTable by Defining ColumnDefs</h2>
+<div class="ui-widget">
+    <table id="my-table" class="display">
+    </table>
+</div>
+@Ajax.DataTable(
+    "my-table",
+    new AjaxOptions { Url = Url.Action("GetJsonData"), HttpMethod = "GET" },
+    new DataTableAttributes
+    {
+        ColumnDefs = new List<ColumnDef>()
+        {
+            new ColumnDef(){ DataProp= "Id", Title="ID"}, 
+            new ColumnDef(){ DataProp= "Engine", Title="Engine"},
+            new ColumnDef(){ DataProp= "Browser", Title="Browser"},
+            new ColumnDef(){ DataProp= "Platform", Title="Platform"},
+            new ColumnDef(){ DataProp= "Version", Title="Version"},
+            new ColumnDef(){ DataProp= "Grade", Title="Grade"}
+        }
+    })
