@@ -158,7 +158,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IntrinsiQ.Web.MVC.Ajax.DataTable\Mvc.Ajax.DataTables.csproj">
+    <ProjectReference Include="..\MVC.Ajax.DataTable\Mvc.Ajax.DataTables.csproj">
       <Project>{1E4F87FB-AFAF-4ED6-AB15-B3894CC2676B}</Project>
       <Name>Mvc.Ajax.DataTables</Name>
     </ProjectReference>
