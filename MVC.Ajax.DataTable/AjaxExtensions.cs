@@ -156,9 +156,6 @@ namespace Mvc.Ajax.DataTables
         }
 
 
-
-
-
         private static MvcHtmlString GenerateColumnDefsForOTable(IEnumerable<ColumnDef> columnDefs)
         {
             if (columnDefs.Count() == 0)

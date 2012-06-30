@@ -15,7 +15,6 @@ namespace Samples.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "Welcome to ASP.NET MVC!";
-
             return View();
         }
 
@@ -26,15 +25,9 @@ namespace Samples.Controllers
 
 
 
-        public ActionResult SimpleMinimumConfiguration()
-        {
-            return View();
-        }
+        public ActionResult SimpleMinimumConfiguration() { return View(); }
 
-        public ActionResult SimpleMinimumConfigurationJson()
-        {
-            return View();
-        }
+        public ActionResult SimpleMinimumConfigurationJson() { return View(); }
 
 
         [HttpGet]
@@ -44,7 +37,7 @@ namespace Samples.Controllers
             DataTableResult dataTableResult = new DataTableResult();
             int iTotalRecords, iTotalDisplayRecords;
 
-            
+
             dataTableResult.aaData = ConvertBrowserInfoListToArray(db.GetData(dataTableParameters, out iTotalRecords, out iTotalDisplayRecords));
 
             dataTableResult.sEcho = dataTableParameters.Echo;
@@ -84,7 +77,7 @@ namespace Samples.Controllers
             return Json(dataTableResult, JsonRequestBehavior.AllowGet);
         }
 
-        
+
     }
 
 
